@@ -12,3 +12,10 @@
           SELECT COUNT (*) FROM EMP // gives number of rows
           select depart ,No_Of_Employee=COUNT(Depart) from Employee group by depart //  gives the Department name as well as it's count
           
+  --3) Heaving :- 
+  
+      select depart ,No_Of_Employee=COUNT(Depart) from Employee group by depart having depart like '____'  
+      
+      select depart , Total_Salry_inDpet=SUM(salary) from Employee group by depart having count(depart)>2 // departent count garter than 2 will only show
+      
+      select depart , Total_Salry_inDpet=SUM(salary) from Employee group by depart having count(*)> 2 //if row is grater than 2 
