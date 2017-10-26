@@ -14,3 +14,7 @@ drop table Temp_akumar_Address
 
 insert into Temp_akumar_Address (After_cleaned_address,Raw_address) select submittedaddress1,address from provider2customer_stage where submission_id='D72690'
 and REGEXP_LIKE (submittedaddress1, '[\-|\.|\+|\:|\(]')
+
+
+// creating primary key constraient in oracle
+create table Temp_akumar (SubmitterNames varchar(100) , CONSTRAINT supplier_pk PRIMARY KEY (SubmitterNames))
