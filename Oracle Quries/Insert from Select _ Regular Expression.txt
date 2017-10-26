@@ -1,0 +1,16 @@
+select * from provider2customer_stage where submission_id='D72690'
+
+Junk Charcacters - , & + : ( /
+  
+select address,submittedaddress1 from provider2customer_stage where submission_id='D72690' and submittedname like '%(%'
+
+create table Temp_akumar_Address (After_cleaned_address varchar(100),Raw_address varchar(100))
+
+select * from Temp_akumar_Address
+
+select Raw_address from Temp_akumar_Address Group By Raw_address
+
+drop table Temp_akumar_Address
+
+insert into Temp_akumar_Address (After_cleaned_address,Raw_address) select submittedaddress1,address from provider2customer_stage where submission_id='D72690'
+and REGEXP_LIKE (submittedaddress1, '[\-|\.|\+|\:|\(]')
