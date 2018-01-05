@@ -1,0 +1,12 @@
+Created the AlphaNumeric code in sql server column.
+
+Create table Reg_Cust_Data(
+CandID as 'CMC-' + RIGHT('000' + CONVERT(varchar,ID),5),
+ID int identity(1,1),
+name varchar(40),
+phone char(10),
+Email varchar(40),
+Designation varchar(25),
+Business varchar(50),
+Addresss varchar(50)
+)
